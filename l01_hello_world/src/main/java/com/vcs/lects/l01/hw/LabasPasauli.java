@@ -1,4 +1,4 @@
-package l01_hello_world;
+package com.vcs.lects.l01.hw;
 
 public class LabasPasauli {
 
