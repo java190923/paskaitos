@@ -1,4 +1,4 @@
-package com.vcs.lects.l04.operators.tasks;
+package com.vcs.lects.l04.tasks;
 
 public class Sultys {
 

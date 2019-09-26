@@ -1,4 +1,6 @@
-package com.vcs.lects.l04.operators.tasks;
+package com.vcs.lects.l04.tasks;
+
+import com.vcs.lects.l04.tasks.AritmetineProgresija;
 
 public class AritmetineProgresijaTest {
 

@@ -1,4 +1,4 @@
-package com.vcs.lects.l04.operators.tasks;
+package com.vcs.lects.l04.tasks;
 
 public class AritmetineProgresija {
 
@@ -13,9 +13,7 @@ public class AritmetineProgresija {
 	 */
 
 	public double formule(double a, double d, double n) {
-
-		return 0;
-
+		return ((2 * a + d * (n - 1)) * n) / 2;
 	}
 
 }
