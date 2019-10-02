@@ -3,20 +3,24 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.vcs.lects.l08.vehicle;
+package com.vcs.lects.l08.vehicle.auto;
+
+import com.vcs.lects.l08.vehicle.TrPriemoneImpl;
+import com.vcs.lects.l08.vehicle.varikliai.SuVarikliu;
+import com.vcs.lects.l08.vehicle.varikliai.Variklis;
 
 /**
  *
  * @author owr
  */
-public abstract class Automobilis extends TrPriemone {
+public abstract class Automobilis extends TrPriemoneImpl implements SuVarikliu {
 
     private AutoColor color;
-    private String engine;
+    
 
     public Automobilis(AutoColor color) {
         this.color = color;
-        this.engine = "KosminisVariklis";
+      
     }
 
     public Automobilis() {
@@ -41,17 +45,6 @@ public abstract class Automobilis extends TrPriemone {
         this.color = color;
     }
 
-    public String getEngine() {
-        return engine;
-    }
 
-    public void setEngine(String engine) {
-        this.engine = engine;
-    }
-
-    @Override
-    public String toString() {
-        return this.getClass().getSimpleName() + "{" + "color=" + color + ", engine=" + engine + "} fromObj:" + super.toString();
-    }
 
 }

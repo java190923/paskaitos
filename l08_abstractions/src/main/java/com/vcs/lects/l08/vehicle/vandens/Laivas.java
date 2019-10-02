@@ -3,13 +3,15 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.vcs.lects.l08.vehicle;
+package com.vcs.lects.l08.vehicle.vandens;
+
+import com.vcs.lects.l08.vehicle.TrPriemoneImpl;
 
 /**
  *
  * @author owr
  */
-public class Laivas extends TrPriemone{
+public class Laivas extends TrPriemoneImpl{
 
     
     //TODO vejo greitis

@@ -3,16 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.vcs.lects.l08.vehicle;
+package com.vcs.lects.l08.vehicle.varikliai;
+
+import com.vcs.lects.l08.vehicle.varikliai.Variklis;
 
 /**
  *
  * @author owr
  */
-public interface TrPriemone {
-
-    void move();
-
-    int getSpeed();
+public class V12 extends E95 {
 
 }

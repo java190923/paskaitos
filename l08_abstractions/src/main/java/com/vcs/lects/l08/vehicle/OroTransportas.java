@@ -9,10 +9,6 @@ package com.vcs.lects.l08.vehicle;
  *
  * @author owr
  */
-public interface TrPriemone {
-
-    void move();
-
-    int getSpeed();
-
+public abstract class OroTransportas extends TrPriemoneImpl {
+    
 }

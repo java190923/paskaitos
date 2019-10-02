@@ -1,18 +1,19 @@
+package com.vcs.lects.l08.vehicle.varikliai;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.vcs.lects.l08.vehicle;
-
 /**
  *
  * @author owr
  */
-public interface TrPriemone {
+public class TDI implements VidausDegimo {
 
-    void move();
-
-    int getSpeed();
+    @Override
+    public void pripiltiKuro() {
+        System.out.println("Pilam TDI");
+    }
 
 }

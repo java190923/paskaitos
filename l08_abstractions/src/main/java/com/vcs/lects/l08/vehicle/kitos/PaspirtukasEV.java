@@ -3,13 +3,19 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.vcs.lects.l08.vehicle;
+package com.vcs.lects.l08.vehicle.kitos;
+
+import com.vcs.lects.l08.vehicle.TrPriemoneImpl;
+import com.vcs.lects.l08.vehicle.varikliai.EV;
+import com.vcs.lects.l08.vehicle.varikliai.ElVariklis;
+import com.vcs.lects.l08.vehicle.varikliai.SuVarikliu;
+import com.vcs.lects.l08.vehicle.varikliai.Variklis;
 
 /**
  *
  * @author owr
  */
-public class PaspirtukasEV extends TrPriemone {
+public class PaspirtukasEV extends TrPriemoneImpl implements SuVarikliu {
 
     private int batteryCapacity;
 
@@ -35,10 +41,15 @@ public class PaspirtukasEV extends TrPriemone {
     public int getSpeed() {
         return 25;
     }
-    
-     @Override
+
+    @Override
     public void move() {
         System.out.println("Judu kiek galiu : " + getSpeed() + " km/h");
+    }
+
+    @Override
+    public Variklis getVariklis() {
+        return new ElVariklis();
     }
 
 }

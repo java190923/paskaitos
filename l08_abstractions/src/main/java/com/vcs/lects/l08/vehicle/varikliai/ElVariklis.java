@@ -3,16 +3,17 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.vcs.lects.l08.vehicle;
+package com.vcs.lects.l08.vehicle.varikliai;
 
 /**
  *
  * @author owr
  */
-public interface TrPriemone {
+public class ElVariklis implements EV{
 
-    void move();
-
-    int getSpeed();
-
+    @Override
+    public void ikrauti() {
+        System.out.println("ikrauti 220V");
+    }
+    
 }

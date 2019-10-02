@@ -3,16 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.vcs.lects.l08.vehicle;
+package com.vcs.lects.l08.vehicle.varikliai;
 
 /**
  *
  * @author owr
  */
-public interface TrPriemone {
+public interface EV extends Variklis {
 
-    void move();
-
-    int getSpeed();
+    void ikrauti();
 
 }

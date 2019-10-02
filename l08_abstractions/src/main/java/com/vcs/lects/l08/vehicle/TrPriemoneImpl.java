@@ -9,7 +9,7 @@ package com.vcs.lects.l08.vehicle;
  *
  * @author owr
  */
-public abstract class TrPriemone {
+public abstract class TrPriemoneImpl implements TrPriemone {
 
     public void move() {
         System.out.println("Moving : " + getSpeed() + " km/h");

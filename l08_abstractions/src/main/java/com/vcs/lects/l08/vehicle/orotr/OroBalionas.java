@@ -5,7 +5,6 @@
  */
 package com.vcs.lects.l08.vehicle.orotr;
 
-import com.vcs.lects.l08.vehicle.KritDaviklis;
 import com.vcs.lects.l08.vehicle.OroTransportas;
 import com.vcs.lects.l08.vehicle.TrPriemoneImpl;
 
@@ -13,16 +12,11 @@ import com.vcs.lects.l08.vehicle.TrPriemoneImpl;
  *
  * @author owr
  */
-public class NaikintuvasF35 extends OroTransportas implements KritDaviklis{
+public class OroBalionas extends OroTransportas {
 
     @Override
     public int getSpeed() {
-        return 1600;
-    }
-
-    @Override
-    public void move() {
-        System.out.println("... vemsiu... po 3G : " + getSpeed() + " km/h");
+        return 5;
     }
 
 }
