@@ -28,6 +28,18 @@ public class Street extends Object {
 
         TrPriemone[] uostas = new TrPriemone[10];
 
+        uostas[0] = new TrPriemone() {
+            @Override
+            public void move() {
+                //...
+            }
+
+            @Override
+            public int getSpeed() {
+                return 0;
+            }
+        } ;
+
         uostas[0] = new Laivas();
         uostas[1] = new Audi();
         uostas[2] = new PaspirtukasEV();
