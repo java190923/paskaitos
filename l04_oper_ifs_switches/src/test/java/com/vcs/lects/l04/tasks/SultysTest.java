@@ -8,12 +8,12 @@ public class SultysTest {
 
 		Sultys s = new Sultys();
 
-		System.out.println(s.arNeraLikucio(6, 3, false) ? "Ok" : "Fail");
-		System.out.println(s.arNeraLikucio(6, 3, true) ? "Ok" : "Fail");
+		System.out.println(s.arNeraLikucio_2(6, 3, false) ? "Ok" : "Fail");
+		System.out.println(s.arNeraLikucio_2(6, 3, true) ? "Ok" : "Fail");
 
-		System.out.println(!s.arNeraLikucio(5, 2, true) ? "Ok" : "Fail");
-		System.out.println(!s.arNeraLikucio(5, 2, false) ? "Ok" : "Fail");
+		System.out.println(!s.arNeraLikucio_2(5, 2, true) ? "Ok" : "Fail");
+		System.out.println(!s.arNeraLikucio_2(5, 2, false) ? "Ok" : "Fail");
 
-		System.out.println(!s.arNeraLikucio(9, 3, true) ? "Ok" : "Fail");
+		System.out.println(!s.arNeraLikucio_2(9, 3, true) ? "Ok" : "Fail");
 	}
 }
