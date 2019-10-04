@@ -47,6 +47,9 @@ public class PrekiuKatalogas {
 
 		System.out.println("Pagal prekes pavadinima: " + pk.searchItem(katalogas, "bor"));
 
+		System.out.println("Suskaiciuoja pagal fraze: " + pk.countItems(katalogas, "le"));
+
+		
 	}
 
 	/**
@@ -76,8 +79,13 @@ public class PrekiuKatalogas {
 	 * @return kiekis
 	 */
 	public int countItems(Item item, String searchText) {
-		// TODO #1
-		return 0;
+		
+		int counter = isItContainsTheText(searchText, item.getName()) ? 1 : 0;
+		
+		for (Item child : item.getChilds()) {
+			counter += countItems(child, searchText);
+		}
+		return counter;
 	}
 
 	/**
@@ -99,7 +107,7 @@ public class PrekiuKatalogas {
 	 * @param searchText - paieskos fraze
 	 * @return kelias iki elemento
 	 */
-	public String getCategoryPath(Item item, String elementName) {
+	public String getCategoryPath(Item item, String searchText) {
 		// TODO #3
 		return null;
 	}
