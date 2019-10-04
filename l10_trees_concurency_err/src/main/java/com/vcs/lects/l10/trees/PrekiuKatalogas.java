@@ -1,5 +1,6 @@
 package com.vcs.lects.l10.trees;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -49,7 +50,14 @@ public class PrekiuKatalogas {
 
 		System.out.println("Suskaiciuoja pagal fraze: " + pk.countItems(katalogas, "le"));
 
-		
+		System.out.println("Paieska pagal fraze, sarasas: ");
+
+		for (Item el : pk.searchAllElements(katalogas, "le")) {
+			System.out.println("   - " + el);
+		}
+
+		System.out.println("Prekes path: " + pk.getCategoryPath(katalogas, "LeParfume"));
+
 	}
 
 	/**
@@ -79,9 +87,9 @@ public class PrekiuKatalogas {
 	 * @return kiekis
 	 */
 	public int countItems(Item item, String searchText) {
-		
+
 		int counter = isItContainsTheText(searchText, item.getName()) ? 1 : 0;
-		
+
 		for (Item child : item.getChilds()) {
 			counter += countItems(child, searchText);
 		}
@@ -96,8 +104,15 @@ public class PrekiuKatalogas {
 	 * @return elemntu sarasas
 	 */
 	public List<Item> searchAllElements(Item item, String searchText) {
-		// TODO #2
-		return null;
+		List<Item> result = new ArrayList<>();
+		if (isItContainsTheText(searchText, item.getName())) {
+			result.add(item);
+		}
+
+		for (Item child : item.getChilds()) {
+			result.addAll(searchAllElements(child, searchText));
+		}
+		return result;
 	}
 
 	/**
@@ -108,8 +123,22 @@ public class PrekiuKatalogas {
 	 * @return kelias iki elemento
 	 */
 	public String getCategoryPath(Item item, String searchText) {
-		// TODO #3
-		return null;
+
+		String path = "";
+
+		if (isItContainsTheText(searchText, item.getName())) {
+			return item.getName();
+		}
+
+		for (Item child : item.getChilds()) {
+			String childPath = getCategoryPath(child, searchText);
+
+			if (!childPath.isEmpty()) {
+				path += item.getName() + " / " + childPath;
+			}
+		}
+
+		return path;
 	}
 
 	private boolean isItContainsTheText(String searchText, String name) {
