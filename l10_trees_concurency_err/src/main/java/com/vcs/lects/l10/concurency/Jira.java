@@ -7,27 +7,29 @@ public class Jira {
 
 	private int number = 0;
 	private List<String> tasks = new ArrayList<>();
+	private int tasksNew = 0;
 
 	public void uzregistruotiDefekta() {
 
 		synchronized (tasks) {
+			tasksNew = countNew();
 			tasks.add("#" + number++);
 		}
-
 	}
 
 	public String pasiimtiTask() {
 
 		synchronized (tasks) {
-			for (String string : tasks) {
-				if (!string.endsWith("-taken")) {
-					int i = tasks.indexOf(string);
-					tasks.set(i, string + "-taken");
+
+			for (int i = 0; i < tasks.size(); i++) {
+				if (!tasks.get(i).endsWith("-taken")) {
+					tasks.set(i, tasks.get(i) + "-taken");
 					return tasks.get(i);
 				}
 			}
+
+			return null;
 		}
-		return null;
 
 	}
 
@@ -46,6 +48,20 @@ public class Jira {
 
 	public int kiekDarbuLike() {
 		return tasks.size();
+	}
+
+	public int kiekDarbuNepradetuLike() {
+		return tasksNew;
+	}
+
+	private int countNew() {
+		int c = 0;
+		for (String taskNr : tasks) {
+			if (!taskNr.endsWith("-taken")) {
+				c++;
+			}
+		}
+		return c;
 	}
 
 }

@@ -4,7 +4,7 @@ public class Dev extends Thread {
 
 	private Jira jira = null;
 	private int uztrunka = 0;
-	private boolean dirba = false;
+	private String task = null;
 
 	public Dev(Jira jira, int uztrunka) {
 		this.jira = jira;
@@ -12,14 +12,12 @@ public class Dev extends Thread {
 	}
 
 	public boolean isDirba() {
-		return dirba;
+		return task != null;
 	}
 
 	public void kodina() {
-		dirba = true;
-
-		String task = jira.pasiimtiTask();
-		if (task != null) {
+		task = jira.pasiimtiTask();
+		if (null != task) {
 
 			try {
 				Thread.sleep(uztrunka);
@@ -28,16 +26,8 @@ public class Dev extends Thread {
 			}
 
 			jira.isprestiTask(task);
-		} else {
-			try {
-				Thread.sleep(10);
-			} catch (InterruptedException e) {
-				e.printStackTrace();
-			}
-		}
-		
-		dirba = false;
 
+		}
 	}
 
 	@Override

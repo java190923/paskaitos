@@ -22,7 +22,8 @@ public class PM extends Thread {
 			e.printStackTrace();
 		}
 
-		int tasks = jira.kiekDarbuLike();
+		int tasksAll = jira.kiekDarbuLike();
+		int tasksNew = jira.kiekDarbuNepradetuLike();
 		int dirbantys = 0;
 		int gyvi = 0;
 
@@ -33,7 +34,7 @@ public class PM extends Thread {
 
 		boolean futboliukas = dirbantys < gyvi;
 
-		System.out.println("Tasks: " + tasks + " dirba: " + dirbantys + " / " + devsTeam.size() + " "
+		System.out.println("Tasks: " + tasksNew +" ("+ tasksAll + ") dirba: " + dirbantys + " / " + devsTeam.size() + " "
 				+ (futboliukas ? "futboliukas!" : ""));
 
 	}
