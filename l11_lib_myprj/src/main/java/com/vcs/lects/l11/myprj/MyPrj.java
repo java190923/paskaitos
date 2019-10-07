@@ -8,7 +8,7 @@ public class MyPrj {
 
 		LibABC abc = new LibABC();
 
-		System.out.println("Ats.: " + abc.sudetis("-4", "2"));
+		System.out.println("Ats.: " + abc.sudetis("2", "4"));
 
 	}
 
