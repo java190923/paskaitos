@@ -4,11 +4,11 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.vcs.task.lib.robo</groupId>
-	<artifactId>11_task_robo_app</artifactId>
+	<artifactId>l11_task_robot_app</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>11_task_robo_app</name>
+	<name>l11_task_robot_app</name>
 	<url>http://maven.apache.org</url>
 
 	<properties>
