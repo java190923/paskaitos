@@ -26,7 +26,7 @@ public class App {
 		 * <li>Susiimportuojam 13_task_robot_app kaip mvn projekta</li>
 		 * <li>Pasileidziat sita "App" klasyte</li>
 		 * 
-		 */
+		 */ 
 
 		RoboLib v = new RoboLib();
 		v.init();
