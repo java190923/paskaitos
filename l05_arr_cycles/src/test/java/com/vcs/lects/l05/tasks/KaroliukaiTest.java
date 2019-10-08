@@ -43,7 +43,7 @@ public class KaroliukaiTest {
 				{ '0', '0', '0', '0', '0' } 
 				};
 
-		Karoliukai k = new Karoliukai();
+		Karoliukai k = new KaroliukaiImpl();
 
 		System.out.println(check(a2, k.rotateClockwise(a1, EMPTY, 47)) ? "Ok" : "fail");
 		System.out.println(check(b2, k.rotateClockwise(b1, EMPTY, 4)) ? "Ok" : "fail");

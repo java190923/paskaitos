@@ -1,10 +1,8 @@
 package com.vcs.lects.l05.tasks;
 
-public class Karoliukai {
+public interface Karoliukai {
 
-	public char[][] rotateClockwise(char[][] data, char emptyChar, int rotateCount) {
-		// TODO
-		return null;
-	}
+
+    char[][] rotateClockwise(char[][] data, char emptyChar, int rotateCount);
 
 }
