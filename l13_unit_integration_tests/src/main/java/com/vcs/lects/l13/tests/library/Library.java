@@ -6,9 +6,7 @@ import java.util.List;
 
 public class Library {
 
-    //    private List<Book> books = new ArrayList<>();
     private IBookResource resource;
-
 
     public Library(IBookResource resource) {
         this.resource = resource;
@@ -20,27 +18,20 @@ public class Library {
 
     public List<Book> searchAvailableBooksByName(String searchCriteria) {
 
+        searchCriteria = searchCriteria.trim();
         List<Book> result = new ArrayList<>();
-        for (Book book : resource.getAvailableBooks()) {
-            if (filterCheck(book, searchCriteria)) {
-                result.add(book);
+        if (!searchCriteria.isBlank()) {
+            for (Book book : resource.getAvailableBooks()) {
+                if (filterCheck(book, searchCriteria)) {
+                    result.add(book);
+                }
             }
         }
         return result;
     }
 
     private boolean filterCheck(Book book, String searchCriteria) {
-
-//        if (searchCriteria == null) {
-//            return false;
-//        }
-
-        if (searchCriteria.isBlank()) {
-            return false;
-        }
-
         return book.getName().toLowerCase().contains(searchCriteria.toLowerCase());
-
     }
 
 

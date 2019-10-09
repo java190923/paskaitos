@@ -19,7 +19,7 @@ public class SearchAvailableBooksByNameTest {
         booksAvailable = new ArrayList<>();
         booksAvailable.add(new Book("0", "JAVA", true));
         booksAvailable.add(new Book("1", "j a v a", true));
-       // booksAvailable.add(new Book("2", "Java kava", false));
+        // booksAvailable.add(new Book("2", "Java kava", false));
         booksAvailable.add(new Book("3", "JaVa", true));
         booksAvailable.add(new Book("4", "bilekas java   kazkas   ", true));
         booksAvailable.add(new Book("5", "kava su java", true));
@@ -41,7 +41,7 @@ public class SearchAvailableBooksByNameTest {
     @Test
     public void successLowerCaseTest() {
         List<Book> availableBooks = library.searchAvailableBooksByName("java");
-        Assert.assertEquals("Knygu kieki skiriasi",4, availableBooks.size());
+        Assert.assertEquals("Knygu kieki skiriasi", 4, availableBooks.size());
         Assert.assertEquals("0", availableBooks.get(0).getIsbn());
         Assert.assertEquals("3", availableBooks.get(1).getIsbn());
         Assert.assertEquals("4", availableBooks.get(2).getIsbn());
@@ -51,7 +51,7 @@ public class SearchAvailableBooksByNameTest {
     @Test
     public void successUpperCaseTest() {
         List<Book> availableBooks = library.searchAvailableBooksByName("JAVA");
-        Assert.assertEquals("Knygu kieki skiriasi",4, availableBooks.size());
+        Assert.assertEquals("Knygu kieki skiriasi", 4, availableBooks.size());
         Assert.assertEquals("0", availableBooks.get(0).getIsbn());
         Assert.assertEquals("3", availableBooks.get(1).getIsbn());
         Assert.assertEquals("4", availableBooks.get(2).getIsbn());
@@ -61,7 +61,7 @@ public class SearchAvailableBooksByNameTest {
     @Test
     public void successMioxedCaseTest() {
         List<Book> availableBooks = library.searchAvailableBooksByName("jaVA");
-        Assert.assertEquals("Knygu kieki skiriasi",4, availableBooks.size());
+        Assert.assertEquals("Knygu kieki skiriasi", 4, availableBooks.size());
         Assert.assertEquals("0", availableBooks.get(0).getIsbn());
         Assert.assertEquals("3", availableBooks.get(1).getIsbn());
         Assert.assertEquals("4", availableBooks.get(2).getIsbn());
@@ -71,7 +71,7 @@ public class SearchAvailableBooksByNameTest {
     @Test
     public void successMioxedCaseNotTrimedTest() {
         List<Book> availableBooks = library.searchAvailableBooksByName(" jaVA\t");
-        Assert.assertEquals("Knygu kieki skiriasi",4, availableBooks.size());
+        Assert.assertEquals("Knygu kieki skiriasi", 4, availableBooks.size());
         Assert.assertEquals("0", availableBooks.get(0).getIsbn());
         Assert.assertEquals("3", availableBooks.get(1).getIsbn());
         Assert.assertEquals("4", availableBooks.get(2).getIsbn());
@@ -96,9 +96,6 @@ public class SearchAvailableBooksByNameTest {
         Assert.assertEquals(0, availableBooks.size());
     }
 
-
-
-//    @Ignore
     @Test
     public void failCaseBlankSpaceTest() {
         List<Book> availableBooks = library.searchAvailableBooksByName(" ");
