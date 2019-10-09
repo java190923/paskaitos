@@ -10,14 +10,26 @@ import java.util.concurrent.TimeUnit;
 public class KaroliukaiBenchamrkTest {
     private static final char EMPTY = ' ';
 
+    private static final int ROTATE_COUNT = 10000;
+
     @Benchmark
     public void benchmarkDainius(KState st) {
-        st.k1.rotateClockwise(st.d, EMPTY, 10000);
+        st.k1.rotateClockwise(st.d, EMPTY, ROTATE_COUNT);
     }
 
     @Benchmark
     public void benchmarkMartynas(KState st) {
-        st.k2.rotateClockwise(st.d, EMPTY, 10000);
+        st.k2.rotateClockwise(st.d, EMPTY, ROTATE_COUNT);
+    }
+
+    @Benchmark
+    public void benchmarkDefault(KState st) {
+        st.k3.rotateClockwise(st.d, EMPTY, ROTATE_COUNT);
+    }
+
+    @Benchmark
+    public void benchmarkTuned(KState st) {
+        st.k4.rotateClockwise(st.d, EMPTY, ROTATE_COUNT);
     }
 
     @State(Scope.Thread)
@@ -26,6 +38,8 @@ public class KaroliukaiBenchamrkTest {
 
         public Karoliukai k1 = new KaroliukaiDainiusImpl();
         public Karoliukai k2 = new KaroliukaiMartynasImpl();
+        public Karoliukai k3 = new KaroliukaiImpl();
+        public Karoliukai k4 = new KaroliukaiTunedImpl();
 
 
         @Setup(Level.Trial)
