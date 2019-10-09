@@ -7,7 +7,7 @@ import org.mockito.Mockito;
 import java.util.ArrayList;
 
 public class LibraryMockTest {
-    
+
     private Library library = null;
     private IBookResource resource = null;
 
@@ -19,7 +19,7 @@ public class LibraryMockTest {
 
     @Test
     public void successLowerCaseTest() {
-        Mockito.when(resource.getAllBooks()).thenThrow(new Exception());
+        Mockito.when(resource.getAllBooks()).thenThrow(new RuntimeException());
         Mockito.when(resource.getAvailableBooks()).thenReturn(new ArrayList<>());
 
         library.searchAvailableBooksByName("java");
