@@ -1,0 +1,41 @@
+{
+  "isSomethingMissing": false,
+  "stringArr": [
+    "Tekstas",
+    "Text",
+    "Text",
+    "Text",
+    "Text",
+    "Text",
+    "Text",
+    "TXT"
+  ],
+  "sk": 2147483647,
+  "strings": [
+    "str",
+    "sdfdsf",
+    "asdsad"
+  ],
+  "langsMap": {
+    "LT": "Lietuvių",
+    "EN": "English"
+  },
+  "persons": {
+    "00002": {
+      "name": "Petras",
+      "age": 908321091
+    },
+    "00005": {
+      "name": "Paulius",
+      "age": 90
+    },
+    "00099": {
+      "name": "999",
+      "age": 999
+    },
+    "00001": {
+      "name": "Ona",
+      "age": 4444
+    }
+  }
+}
