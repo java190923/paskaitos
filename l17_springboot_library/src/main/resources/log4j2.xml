@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN">
+	<Appenders>
+
+		<Console name="Console" target="SYSTEM_OUT">
+			<PatternLayout
+				pattern="%clr(%d{HH:mm:ss.SSS} [%t] %-5level %logger{12} - %msg %n) {yellow} " />
+		</Console>
+
+		<RollingFile name="file" fileName="app.log"
+			filePattern="app-%d{yyyy-MM-dd}.log">
+			<PatternLayout>
+				<pattern>%d{HH:mm:ss.SSS} [%t] %-5level %logger{12} - %msg %n
+				</pattern>
+			</PatternLayout>
+			<Policies>
+				<TimeBasedTriggeringPolicy interval="1"
+					modulate="true" />
+			</Policies>
+		</RollingFile>
+	</Appenders>
+
+
+	<Loggers>
+
+		<Logger name="com.vcs.lects.l17" level="debug"
+			additivity="true">
+			<appender-ref ref="file" level="debug" />
+		</Logger>
+
+		<Root level="info">
+			<AppenderRef ref="Console" />
+			<AppenderRef ref="file" />
+		</Root>
+	</Loggers>
+</Configuration>
