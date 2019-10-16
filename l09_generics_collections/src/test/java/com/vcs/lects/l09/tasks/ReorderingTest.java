@@ -1,5 +1,7 @@
 package com.vcs.lects.l09.tasks;
 
+import com.vcs.lects.l09.tasks.reordering.IReordering;
+import com.vcs.lects.l09.tasks.reordering.Mokinys;
 import org.openjdk.jmh.annotations.*;
 
 import java.util.*;

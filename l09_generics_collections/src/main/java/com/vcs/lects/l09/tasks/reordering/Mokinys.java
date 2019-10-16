@@ -1,4 +1,4 @@
-package com.vcs.lects.l09.tasks;
+package com.vcs.lects.l09.tasks.reordering;
 
 public class Mokinys {
 
