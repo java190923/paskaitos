@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-public class LiambdasWithStepsImpl implements IReordering {
+public class StreamAPIWithStepsImpl implements IReordering {
     @Override
     public List<List<Mokinys>> getReordered(Map<String, List<Mokinys>> mokiniai) {
 

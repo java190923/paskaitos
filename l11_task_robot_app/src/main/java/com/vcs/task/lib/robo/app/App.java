@@ -29,8 +29,46 @@ public class App {
 		 */
 
 		RoboLib v = new RoboLib();
+		v.setRoboEventHandlerProvider(new RoboEventHandlerProvider() {
+			@Override
+			public RoboEventsHandler provideHandler() {
+				return new RoboEventsHandler() {
+					@Override
+					public void doTheJobFlow(RoboStep step) {
+						step.goForvard(2);
+						step.left(1);
+						step.goForvard(2);
+						step.right(1);
+						step.goForvard(3);
+						step.right(2);
+						step.analize();
+					}
+				};
+			}
+		});
 		v.init();
-		v.runRobo(null);
+		v.runRobo(new EventsListener() {
+			@Override
+			public void doAction(Step step, int count) {
+
+				if (Step.LEFT.equals(step)) {
+					System.out.println(Step.RIGHT + " " + count);
+					return;
+				}
+
+				if (Step.RIGHT.equals(step)) {
+					System.out.println(Step.LEFT + " " + count);
+					return;
+				}
+
+				System.out.println(step + " " + count);
+			}
+
+			@Override
+			public void done(int x, int y, int pos) {
+				System.out.println("x,y = [" + x + "," + y + "] " + pos);
+			}
+		});
 
 	}
 }
