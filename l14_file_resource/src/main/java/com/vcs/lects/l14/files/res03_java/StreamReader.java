@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.stream.Collectors;
+import java.util.*;
 
 public class StreamReader {
 
@@ -13,7 +14,7 @@ public class StreamReader {
 
         String fileName = "duomenys.dat";
 
-        java.util.List<String> lines = Files.lines(Paths.get(fileName)).collect(Collectors.toList());
+        List<String> lines = Files.lines(Paths.get(fileName)).collect(Collectors.toList());
 
         int c = 0;
         for (String line : lines) {

@@ -1,4 +1,4 @@
-package com.vcs.lects.l18.cleancode.task;
+package com.vcs.lects.l18.cleancode.tasks;
 
 import java.io.BufferedReader;
 import java.io.File;
