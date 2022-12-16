@@ -13,7 +13,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>11</java.version>
-        <version.spring>4.3.18.RELEASE</version.spring>
+        <version.spring>5.2.20.RELEASE</version.spring>
     </properties>
 
     <dependencies>
